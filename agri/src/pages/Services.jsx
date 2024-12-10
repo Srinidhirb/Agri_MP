@@ -63,6 +63,7 @@ function Services() {
             Plant Diseases <br /> and Remedies
           </span>
         </div>
+        <Link to="/weather">
         <div
           className="h-[26rem] bg-cover w-80 bg-center flex items-end relative "
           style={{ backgroundImage: `url(${CLimate})` }}
@@ -78,6 +79,7 @@ function Services() {
             Weather <br /> Prediction
           </span>
         </div>
+        </Link>
       </div>
       <div className="flex justify-center  items-center gap-8">
         <div
