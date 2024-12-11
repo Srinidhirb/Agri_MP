@@ -6,6 +6,8 @@ import HomePage from './pages/Home';
 import Demo from './pages/demo'
 import SoilCrop from './pages/SoilCrop';
 import Services from './pages/Services';
+import Plant from './pages/Plant';
+import Education from './pages/Education';
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
           <Route path="/soilcrop" element={<SoilCrop/>} />  {/* AboutPage route */}
           <Route path="/Demo" element={<Demo/>} />  {/* AboutPage route */}
           <Route path="/services" element={<Services/>} />  {/* AboutPage route */}
+          <Route path="/plant" element={<Plant/>} />  {/* AboutPage route */}
+          <Route path="/education" element={<Education/>} />  {/* AboutPage route */}
         </Routes>
       </div>
     </Router>

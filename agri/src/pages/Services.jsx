@@ -48,7 +48,7 @@ function Services() {
             </span>
           </div>
         </Link>
-        <div
+        <Link to="/Plant"><div
           className="h-[26rem] bg-cover w-80 bg-center flex items-end relative "
           style={{ backgroundImage: `url(${Plant})` }}
         >
@@ -63,6 +63,7 @@ function Services() {
             Plant Diseases <br /> and Remedies
           </span>
         </div>
+        </Link>
         <Link to="/weather">
         <div
           className="h-[26rem] bg-cover w-80 bg-center flex items-end relative "

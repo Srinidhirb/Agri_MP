@@ -12,3 +12,6 @@
   /* Hides scrollbar */
   scrollbar-width: none; /* Firefox */
 }
+body{
+  background-color: white;
+}
