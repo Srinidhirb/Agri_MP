@@ -54,7 +54,8 @@ function Plant() {
   }
 
   return (
-    <> <NavBar />
+    <> 
+      <NavBar />
       <Banner items={["Home", "Services", "Plant Diseases and Remedies"]} />
     <div className="min-h-screen flex flex-col justify-center items-center bg-gray-50 py-8">
       <div className="bg-white p-8 rounded-lg shadow-xl w-96">

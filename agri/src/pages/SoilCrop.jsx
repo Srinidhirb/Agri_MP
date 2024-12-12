@@ -78,8 +78,8 @@ function SoilCrop() {
   };
 
   return (
-    <>
-      <NavBar />
+    <>  <NavBar />
+      
       <Banner items={["Home", "services", "Soil Health Analysis"]} />
       <FileUpload />
       <div className="flex items-center my-8 w-11/12 mx-auto">

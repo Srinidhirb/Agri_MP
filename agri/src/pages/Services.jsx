@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import Banner from "../components/Banner";
 import Soil from "../assets/images/Soil.png";
@@ -9,18 +10,26 @@ import Education from "../assets/images/education.png";
 import Market from "../assets/images/market.jpg";
 import { Link } from "react-router-dom";
 import Loader from "../components/Loader";
+import { useUser } from "./UserContext"; // Assuming UserContext manages authentication
 
 function Services() {
   const [loading, setLoading] = useState(true);
-
+  const { user } = useUser(); // Check authentication status
+  const navigate = useNavigate();
+  const location = useLocation()
   useEffect(() => {
-    // Simulate a loading delay
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 2000);
+    // Redirect to login if not authenticated
+    if (!user) {
+      navigate("/login", { state: { from: location.pathname } }); // Pass the current path
+    } else {
+      // Simulate a loading delay
+      const timer = setTimeout(() => {
+        setLoading(false);
+      }, 2000);
 
-    return () => clearTimeout(timer);
-  }, []);
+      return () => clearTimeout(timer);
+    }
+  }, [user, navigate]);
 
   if (loading) {
     return <Loader />;
@@ -28,7 +37,7 @@ function Services() {
 
   return (
     <>
-      <NavBar />
+        <NavBar />
       <Banner items={["Home", "services"]} />
       <div className="flex justify-center mt-12 mb-8 items-center gap-8">
         <Link to="/soilcrop">

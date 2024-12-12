@@ -159,7 +159,7 @@ function WeatherApp() {
   };
   return (
     <>
-      <NavBar />
+        <NavBar />
       <Banner items={["Home", "Services", "Weather Prediction"]} />
       <div className="flex justify-center my-6">
         <div className="min-h-screen w-4/5 flex flex-col justify-center items-center p-6">

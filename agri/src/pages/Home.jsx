@@ -12,6 +12,7 @@ import SH from "../assets/images/sh.png";
 import RS from "../assets/images/rs.png";
 import Loader from "../components/Loader";
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 function HomePage() {
   const [loading, setLoading] = useState(true);
 
@@ -285,12 +286,14 @@ function HomePage() {
             </p>
           </div>
         </div>
+        <Link to="/services">
         <span
           style={{ fontFamily: '"Covered By Your Grace", cursive' }}
           className=" mt-4  underline cursor-pointer text-orange-500 text-2xl font-normal"
         >
           Know More
         </span>
+        </Link>
       </div>
       <div className="py-16 px-8  flex flex-col items-center  ">
         <p
