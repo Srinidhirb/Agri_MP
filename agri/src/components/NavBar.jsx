@@ -24,6 +24,13 @@ const NavBar = () => {
     setIsOpen(false);
   };
 
+  const handleLogout = () => {
+    const confirmLogout = window.confirm("Are you sure you want to log out?");
+    if (confirmLogout) {
+      logout(); // Call the logout function if confirmed
+    }
+  };
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -64,13 +71,13 @@ const NavBar = () => {
             </div>
             <SearchIcon />
           </div>
-          <ul className="flex  gap-6"> 
+          <ul className="flex gap-6"> 
           {!user ? (
                 <>
                   <li>
-                  <Link to="/login" state={{ from: location }}>
-      Login
-    </Link>
+                    <Link to="/login" state={{ from: location }}>
+                      Login
+                    </Link>
                   </li>
                   <li>
                     <Link to="/register">Register</Link>
@@ -79,11 +86,11 @@ const NavBar = () => {
               ) : (
                 <>
                   <li>
-                  <span>{user?.username}</span>
-                  {/* Display logged-in user's name */}
+                    <span>{user?.username}</span>
+                    {/* Display logged-in user's name */}
                   </li>
                   <li>
-                    <button onClick={logout}>Logout</button> {/* Logout button */}
+                    <button onClick={handleLogout}>Logout</button> {/* Logout button with confirmation */}
                   </li>
                 </>
               )}
@@ -104,7 +111,6 @@ const NavBar = () => {
               </div>
             </div>
           </div>
-          
         </div>
       </div>
 
@@ -130,8 +136,6 @@ const NavBar = () => {
               <li>
                 <Link to="/">Contact</Link>
               </li>
-              {/* Conditionally render Login/Register or Username/Logout */}
-              
             </ul>
           </nav>
         </div>

@@ -13,6 +13,7 @@ import RS from "../assets/images/rs.png";
 import Loader from "../components/Loader";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import Footer from "../components/Footer";
 function HomePage() {
   const [loading, setLoading] = useState(true);
 
@@ -309,8 +310,9 @@ function HomePage() {
           
         </div>
       </div>
-
+        <Footer/>
     </div>
+    
   );
 }
 

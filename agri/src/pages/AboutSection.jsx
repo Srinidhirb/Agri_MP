@@ -9,7 +9,43 @@ import Tick from "../assets/icons/Tick";
 import About from "../assets/images/aboutimg.png";
 import AboutBg from "../assets/images/aboutbanner.png";
 import Video from "../assets/images/video.mp4";
+import Footer from "../components/Footer";
 const AboutSection = () => {
+
+const teamMembers = [
+  {
+    id: 1,
+    name: 'Dhaarini K N Hathwar',
+    title: 'Team Lead',
+    description: 'Some text that describes me lorem ipsum ipsum lorem.',
+    email: 'jane@example.com',
+   
+  },
+  {
+    id: 2,
+    name: 'Srinidhi R Bharadwaj',
+    title: 'Developer and Design Lead',
+    description: 'Some text that describes me lorem ipsum ipsum lorem.',
+    email: 'mike@example.com',
+   
+  },
+  {
+    id: 3,
+    name: 'Yashas Kishore',
+    title: 'Developer ',
+    description: 'Some text that describes me lorem ipsum ipsum lorem.',
+    email: 'john@example.com',
+  
+  },
+  {
+    id: 4,
+    name: 'Indu K',
+    title: 'Developer',
+    description: 'Some text that describes me lorem ipsum ipsum lorem.',
+    email: 'john@example.com',
+    
+  },
+];
   const testimonials = [
     {
       text: "AgriSphere has transformed the way we approach farming. The market price prediction tool helps us make informed decisions, while the weather updates ensure we're always prepared for changes. It's a game-changer for modern agriculture!",
@@ -25,31 +61,8 @@ const AboutSection = () => {
       name: "Priya Verma",
       position: "Agricultural Consultant",
     },
-    
   ];
-  const teamMembers = [
-    {
-      name: "Lindsay Walton",
-      role: "Front-end Developer",
-      image: "https://via.placeholder.com/150", // Replace with actual image URL
-      linkedin: "#",
-      twitter: "#",
-    },
-    {
-      name: "Courtney Henry",
-      role: "Designer",
-      image: "https://via.placeholder.com/150", // Replace with actual image URL
-      linkedin: "#",
-      twitter: "#",
-    },
-    {
-      name: "Tom Cook",
-      role: "Director of Product",
-      image: "https://via.placeholder.com/150", // Replace with actual image URL
-      linkedin: "#",
-      twitter: "#",
-    },
-  ];
+  
   return (
     <>
       <NavBar />
@@ -176,43 +189,68 @@ const AboutSection = () => {
       <video src={Video} className="w-full" autoPlay controls ></video>
       </div> */}
       <div
-  style={{ backgroundImage: `url(${AboutBg})` }}
-  className="h-[60vh]\ bg-cover flex-col  flex items-center justify-center"
->
-  <div className="text-center ">
-    <h3
-      className="text-orange-500 text-2xl my-6 font-normal"
-      style={{ fontFamily: '"Covered By Your Grace", cursive' }}
-    >
-      Testimonials
-    </h3>
-    <h3 className="text-4xl font-bold text-gray-800 mb-6">
-    What They Say
-    </h3>
-  </div>
-  <section className="w-full">
-    <div className="container mx-auto flex flex-wrap justify-center gap-6 px-4 py-8">
-      {testimonials.map((testimonial, index) => (
-        <div
-          key={index}
-          className="bg-white rounded-md shadow-md p-6 text-center w-full md:w-[30%]"
-        >
-          <p className="text-gray-600 text-sm">{`“${testimonial.text}”`}</p>
-          <div className="flex justify-center pt-4 pb-2">
-            <img
-              className="w-14 h-14 rounded-full object-cover"
-              src={testimonial.image}
-              alt={testimonial.name}
-            />
-          </div>
-          <div className="text-gray-600 font-medium">{testimonial.name}</div>
-          <div className="text-gray-500 text-sm">{testimonial.position}</div>
+        style={{ backgroundImage: `url(${AboutBg})` }}
+        className="h-[60vh]\ bg-cover flex-col  flex items-center justify-center"
+      >
+        <div className="text-center ">
+          <h3
+            className="text-orange-500 text-2xl my-6 font-normal"
+            style={{ fontFamily: '"Covered By Your Grace", cursive' }}
+          >
+            Testimonials
+          </h3>
+          <h3 className="text-4xl font-bold text-gray-800 mb-6">
+            What They Say
+          </h3>
         </div>
-      ))}
+        <section className="w-full">
+          <div className="container mx-auto flex flex-wrap justify-center gap-6 px-4 py-8">
+            {testimonials.map((testimonial, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-md shadow-md p-6 text-center w-full md:w-[30%]"
+              >
+                <p className="text-gray-600 text-sm">{`“${testimonial.text}”`}</p>
+                <div className="flex justify-center pt-4 pb-2">
+                  <img
+                    className="w-14 h-14 rounded-full object-cover"
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                  />
+                </div>
+                <div className="text-gray-600 font-medium">
+                  {testimonial.name}
+                </div>
+                <div className="text-gray-500 text-sm">
+                  {testimonial.position}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      </div>
+      <div className="container mx-auto px-4 py-8">
+      <h2 className="text-center text-3xl font-semibold mb-8">Our Team</h2>
+      <div className="flex  ">
+        {/* Card 1 */}
+        <div className="flex  ">
+        {teamMembers.map((member) => (
+          <div key={member.id} className="w-full sm:w-1/3 px-4 mb-8">
+            <div className="card shadow rounded-lg overflow-hidden">
+            
+              <div className="p-6 bg-white">
+                <h2 className="text-2xl font-bold">{member.name}</h2>
+                <p className="text-gray-500 text-sm">{member.title}</p>
+                <p className="text-gray-700 mt-2">{member.description}</p>
+                <p className="text-gray-500 mt-2">{member.email}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      </div>
     </div>
-  </section>
-</div>
-
+    <Footer/>
     </>
   );
 };

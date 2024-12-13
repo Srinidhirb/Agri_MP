@@ -11,6 +11,7 @@ import Market from "../assets/images/market.jpg";
 import { Link } from "react-router-dom";
 import Loader from "../components/Loader";
 import { useUser } from "./UserContext"; // Assuming UserContext manages authentication
+import Footer from "../components/Footer";
 
 function Services() {
   const [loading, setLoading] = useState(true);
@@ -107,7 +108,7 @@ function Services() {
             Resource <br /> Sharing
           </span>
         </div>
-        <div
+        <Link to="/education"><div
           className="h-[26rem] bg-cover w-80 bg-center flex items-end relative "
           style={{ backgroundImage: `url(${Education})` }}
         >
@@ -122,6 +123,7 @@ function Services() {
             Education and <br /> Community
           </span>
         </div>
+        </Link>
         <div
           className="h-[26rem] bg-cover w-80 bg-center flex items-end relative "
           style={{ backgroundImage: `url(${Market})` }}
@@ -138,6 +140,7 @@ function Services() {
           </span>
         </div>
       </div>
+      <Footer/>
     </>
   );
 }

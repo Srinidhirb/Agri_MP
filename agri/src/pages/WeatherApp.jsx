@@ -14,7 +14,10 @@ import Psunny from "../assets/images/Psunny.png";
 import Strom from "../assets/images/storm.png";
 import Sunny from "../assets/images/Sunny.png";
 import Cloudy from "../assets/images/cloudy.png";
+import { useUser } from '../pages/UserContext.js';
+
 import Location from "../assets/icons/Location"
+import Footer from "../components/Footer.jsx";
 function WeatherApp() {
   const [city, setCity] = useState("Bangalore");
   const [weatherData, setWeatherData] = useState(null);
@@ -22,7 +25,7 @@ function WeatherApp() {
   const [currentTime, setCurrentTime] = useState("");
   const [unit, setUnit] = useState("C"); // Default unit is Celsius
   const [topCitiesData, setTopCitiesData] = useState([]);
-
+  const { user } = useUser(); 
   useEffect(() => {
     const topCities = ["Delhi", "Mumbai", "Chennai", "Kolkata", "Mysore"]; // Add top cities
     const fetchWeatherDataForCities = async () => {
@@ -166,7 +169,8 @@ function WeatherApp() {
           {/* Header */}
           <div className="flex justify-between px-3 items-center mb-6 w-full">
             <div>
-              <h2 className="text-xl font-bold text-gray-800">Hi, Srinidhi</h2>
+              <h2 className="text-xl font-bold text-gray-800">Hi, {user?.username}</h2>
+              
               <p className="text-gray-500">Good Morning</p>
             </div>
             <form
@@ -486,6 +490,7 @@ function WeatherApp() {
           </div>
         </div>
       </div>
+      <Footer/>
     </>
   );
 }

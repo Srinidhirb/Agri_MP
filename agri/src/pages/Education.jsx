@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Loader from "../components/Loader";
 import NavBar from "../components/NavBar";
 import Banner from "../components/Banner";
+import Footer from "../components/Footer";
 
 // Function to fetch videos from the Flask backend
 const fetchVideos = async (keyword, sortBy) => {
@@ -119,7 +120,7 @@ function Education() {
               <button
                 type="button"
                 onClick={() => setIsOpen(!isOpen)}
-                className="p-2 bg-blue-500 text-white rounded-full hover:bg-blue-600"
+                className="p-2 bg-[#F7C35F] text-white rounded-full "
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -154,7 +155,7 @@ function Education() {
                 </select>
                 <button
                   type="submit"
-                  className="bg-blue-500 text-white p-2 rounded hover:bg-blue-600"
+                  className="bg-[#F7C35F] text-black p-2 rounded "
                 >
                   Search
                 </button>
@@ -170,35 +171,36 @@ function Education() {
         </div>
       </div>
 
-      <div className="App container mx-auto px-4 py-8">
+      <div className="App  mx-auto px-4 py-8">
         {/* Tabs Section */}
         <div className="mb-6 flex flex-wrap gap-3 justify-center space-x-2">
           {agriculture_keywords.map((word, index) => (
             <button
-              key={index}
-              className={`px-4 py-2 rounded ${
-                keyword === word
-                  ? "bg-blue-500 text-white"
-                  : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-              }`}
-              onClick={() => handleTabClick(word)}
-            >
-              {word}
-            </button>
+            key={index}
+            className={`px-4 py-2 border rounded-3xl capitalize  ${
+              keyword === word
+                ? "bg-[#F7C35F] text-black "
+                : "bg-[#E9F1EE] text-gray-700 hover:bg-[#F7C35F]"
+            }`}
+            onClick={() => handleTabClick(word)}
+          >
+            {word}
+          </button>
+          
           ))}
         </div>
 
         {isLoading && <p className="text-center">Loading videos...</p>}
         {error && <p className="text-center text-red-500">{error}</p>}
 
-        <div className="flex flex-wrap gap-6 justify-center">
+        <div className="flex w-full flex-wrap gap-6 justify-center">
           {videoUrls.length > 0 ? (
             videoUrls.map((url, index) => (
               <div
                 key={index}
-                className="relative w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2"
+                className="relative w-full sm:w-1/2 md:w-1/3 lg:w-1/5 p-2"
               >
-                <div className="relative h-[300px] group rounded-lg overflow-hidden bg-gray-100 shadow-lg">
+                <div className="relative h-[250px] group rounded-lg overflow-hidden bg-gray-100 shadow-lg">
                   <iframe
                     ref={(el) => (videoRefs.current[index] = el)}
                     data-src={url} // Store the actual src here
@@ -217,6 +219,7 @@ function Education() {
           )}
         </div>
       </div>
+      <Footer/>
     </>
   );
 }
