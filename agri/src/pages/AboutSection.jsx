@@ -18,7 +18,7 @@ const teamMembers = [
     name: 'Srinidhi R Bharadwaj',
     title: 'Team Lead',
     description: 'A 4th-year BTech Artificial Intelligence and Data Science student, combines leadership skills and technical expertise to drive innovation and deliver impactful results.',
-    email: 'srinnidhirbharadwaj@gmail.com',
+    email: 'srinidhirbharadwaj@gmail.com',
    
   },
   {
