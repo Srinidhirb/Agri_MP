@@ -26,7 +26,9 @@ const SearchIcon = () => {
   }, [showInput]);
 
   return (
-    <div style={{ display: "flex", alignItems: "center", position: "relative" }}>
+    <div
+      style={{ display: "flex", alignItems: "center", position: "relative" }}
+    >
       {/* The Search Icon */}
       <div onClick={toggleInput} style={{ cursor: "pointer" }}>
         <svg
@@ -40,10 +42,10 @@ const SearchIcon = () => {
             <path d="M0 0H55V36H0V0Z" />
           </mask>
           <path
-  d="M1 36V0H-10V36H1Z"  // Increased width by changing -1 to -10
-  fill="#E4E2D7"
-  mask="url(#path-1-inside-1_3_626)"
-/>
+            d="M1 36V0H-10V36H1Z" // Increased width by changing -1 to -10
+            fill="#E4E2D7"
+            mask="url(#path-1-inside-1_3_626)"
+          />
 
           <g clipPath="url(#clip0_3_626)">
             <path
@@ -74,9 +76,8 @@ const SearchIcon = () => {
             marginLeft: "10px",
             padding: "5px 10px",
             fontSize: "16px",
-            transition: "all 0.3s ease-in-out"
+            transition: "all 0.3s ease-in-out",
           }}
-          
         />
       )}
     </div>

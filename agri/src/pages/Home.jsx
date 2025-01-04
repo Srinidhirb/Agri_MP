@@ -14,14 +14,15 @@ import Loader from "../components/Loader";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
+import { useTranslation } from "react-i18next";
 function HomePage() {
   const [loading, setLoading] = useState(true);
-
+  const { t } = useTranslation();
   useEffect(() => {
     // Simulate a loading delay
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -39,13 +40,13 @@ function HomePage() {
       >
         <div className="relative z-10 flex flex-col items-start justify-center h-full w-10/12 text-white ">
           <h1 className="text-xs sm:text-xs font-bold mb-4">
-            WELCOME TO AGRI SPHERE
+          {t('welcome')}
           </h1>
           <h2
-            className="text-8xl sm:text-8xl font-semibold mb-4"
+            className="text-8xl sm:text-8xl font-semibold overflow-hidden mb-4 pt-6"
             style={{ fontFamily: '"Covered By Your Grace", cursive' }}
           >
-            Agriculture{" "}
+             {t('agriculture')}{" "}
             <span
               style={{
                 color: "#EEC044",
@@ -54,15 +55,14 @@ function HomePage() {
             >
               &
             </span>{" "}
-            <br /> Eco Farming
+            <br />  {t('ecoFarming')}
           </h2>
 
-          <p className="max-w-lg  mb-6 text-lg sm:text-xm">
-          Revolutionize your farming with cutting-edge solutions that streamline decision-making and maximize productivity. Access tailored insights for efficient crop management, optimal resource use, and market preparedness. Take a step toward a more sustainable, profitable, and future-ready agriculture.
-          </p>
+          <p className="max-w-2xl  mb-6 text-lg sm:text-xm">
+          {t('revolutionize')}          </p>
           <div className="flex gap-8">
             <button className="bg-green-500 text-white px-6 py-3 rounded-lg text-lg hover:bg-green-600 transition-all duration-300">
-              Discover More
+            {t('discoverMore')}
             </button>
             <img src={Leaf} alt="" />
           </div>
@@ -84,33 +84,29 @@ function HomePage() {
             className="text-orange-500  text-2xl mb-2 "
             style={{ fontFamily: '"Covered By Your Grace", cursive' }}
           >
-            Our Introductions
+             {t('ourIntroductions')}
           </h2>
           <h3 className="text-4xl font-bold text-gray-800 mb-6">
-          Redefining Agriculture for a Smarter, Sustainable Future.          </h3>
+          {t('redefining')}         </h3>
           <p className="text-lg text-gray-700 mb-6">
-          Welcome to Agrisphere, where innovation drives sustainable agriculture. Our platform equips farmers with smart tools and insights to boost productivity, optimize resources, and embrace eco-friendly practices. Together, we’re shaping a future where farming thrives in harmony with the environment.
-          </p>
+          {t('welcomeToAgrisphere')}          </p>
 
           {/* Icons with Text */}
           <div className="flex space-x-12 mb-6">
             <div className="flex flex-col items-center">
             <span className="mb-2">🌱</span> 
               <p className="text-center text-sm text-gray-600">
-              Enhancing Productivity
-              </p>
+              {t('enhancingProductivity')}              </p>
             </div>
             <div className="flex flex-col items-center">
             <span className="mb-2">💡</span> 
               <p className="text-center text-sm text-gray-600">
-              Data-Driven Solutions
-              </p>
+              {t('dataDrivenSolutions')}              </p>
             </div>
             <div className="flex flex-col items-center">
             <span className="mb-2">🌍</span> 
               <p className="text-center text-sm text-gray-600">
-              Eco-Friendly Practices
-              </p>
+              {t('ecoFriendlyPractices')}              </p>
             </div>
           </div>
 
@@ -118,20 +114,17 @@ function HomePage() {
           <div className="flex items-center space-x-3 mb-8">
             <Tick />
             <p className="text-lg text-gray-700">
-            Bridging the gap between tradition and technology.
-            </p>
+            {t('bridgingGap')}            </p>
           </div>
           <div className="flex items-center space-x-3 mb-8">
             <Tick />
             <p className="text-lg text-gray-700">
-            Advanced tools for crop planning and market readiness.
-            </p>
+            {t('advancedTools')}            </p>
           </div>
 
           {/* Button */}
           <button className="bg-green-500 text-white px-6 py-3 rounded-lg text-lg hover:bg-green-600 transition-all duration-300">
-            Discover More
-          </button>
+          {t('discoverMore')}          </button>
         </div>
       </div>
       <div
@@ -143,17 +136,17 @@ function HomePage() {
             style={{ fontFamily: '"Covered By Your Grace", cursive' }}
             className="text-green-500 text-2xl font-normal"
           >
-            What We Do
+             {t('whatWeDo')}
           </p>
           <h2 className="text-center text-4xl font-bold text-gray-800 mb-12">
-            Empowering Agriculture <br /> Through Innovation and Insight
+          {t('empoweringAgriculture')} <br />   {t('empoweringAgriculture2')}
           </h2>
           <div className="flex justify-between gap-8">
             {/* Card 1: Smart Farming Solutions */}
             <div className="flex flex-col items-center bg-white p-6 rounded-lg shadow-lg  max-w-xs">
               <img src={SMS} alt="" />
               <h3 className="text-xl font-semibold text-gray-800 mt-2 mb-4">
-                SMART FARMING SOLUTIONS
+              {t('smartFarmingSolutions')}
               </h3>
               <p className="text-gray-600">
                 Seeking to offer your farm’s yield with smart farming solutions.
@@ -169,7 +162,7 @@ function HomePage() {
             <div className="flex flex-col items-center bg-white p-6 rounded-lg shadow-lg  max-w-xs">
               <img src={SPS} alt="" />
               <h3 className="text-xl font-semibold text-gray-800 my-5">
-                SUSTAINABLE PRACTICES SUPPORT
+              {t('sustainablePracticesSupport')}
               </h3>
               <p className="text-gray-600">
                 Providing your farm with sustainable methods and support. Access
@@ -185,7 +178,7 @@ function HomePage() {
             <div className="flex flex-col items-center bg-white p-6 rounded-lg shadow-lg  max-w-xs">
               <img src={MEM} alt="" />
               <h3 className="text-xl font-semibold text-gray-800 mt-2 mb-4">
-                MARKET ACCESS AND EDUCATION
+              {t('marketAccessEducation')}
               </h3>
               <p className="text-gray-600">
                 Delivering new ways to access markets and learn about the latest
@@ -207,7 +200,7 @@ function HomePage() {
           Our Services
         </p>
         <h2 className="text-center text-4xl font-bold text-gray-800 mb-12">
-          What We Offer
+        {t('whatWeOffer')}
         </h2>
         <div className="flex flex-wrap justify-center gap-6 px-4">
           {/* Service Card 1 */}
@@ -218,7 +211,7 @@ function HomePage() {
               className="rounded-t-lg w-full h-48 object-cover"
             />
             <h3 className="text-xl font-bold mt-4">
-              Plant Diseases and Remedies
+            {t('plantDiseases')}
             </h3>
             <p className="text-gray-600 mt-2">
               Diagnose plant diseases with ease and access proven remedies to
@@ -233,7 +226,7 @@ function HomePage() {
               className="rounded-t-lg w-full h-48 object-cover"
             />
             <h3 className="text-xl font-bold mt-4">
-              Soil Health Analysis and Suitability
+            {t('soilHealth')}
             </h3>
             <p className="text-gray-600 mt-2">
               Upload soil reports for a detailed analysis, including
@@ -249,7 +242,7 @@ function HomePage() {
               className="rounded-t-lg w-full  object-cover"
             />
             <h3 className="text-xl font-bold mt-4">
-              Resource Sharing and Community{" "}
+            {t('resourceSharing')}
             </h3>
             <p className="text-gray-600 mt-2">
               A platform for farmers to share or borrow equipment, labor, and
@@ -262,7 +255,7 @@ function HomePage() {
           style={{ fontFamily: '"Covered By Your Grace", cursive' }}
           className=" mt-4  underline cursor-pointer text-orange-500 text-2xl font-normal"
         >
-          Know More
+          {t('knowMore')}
         </span>
         </Link>
       </div>
@@ -271,10 +264,10 @@ function HomePage() {
           style={{ fontFamily: '"Covered By Your Grace", cursive' }}
           className="text-green-500 text-2xl font-normal"
         >
-          Latest News
+          {t('latestNews')}
         </p>
         <h2 className="text-center text-4xl font-bold text-gray-800 mb-12">
-        Check out our blog posts
+        {t('blogPosts')}
         </h2>
         <div className="flex flex-wrap justify-center gap-6 px-4">
           

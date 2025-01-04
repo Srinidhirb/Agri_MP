@@ -14,6 +14,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import NavBar from './components/NavBar'; // Import your NavBar
 import ProfilePage from './pages/ProfilePage';
+import LanguageSelector from './components/LanguageSelector';
 // Create a QueryClient instance
 const queryClient = new QueryClient();
 
@@ -37,6 +38,7 @@ const App = () => {
             {/* Login and Register Routes */}
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/lang" element={<LanguageSelector />} />
           </Routes>
         </Router>
       </UserProvider>
