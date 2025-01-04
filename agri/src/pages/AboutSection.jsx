@@ -15,34 +15,34 @@ const AboutSection = () => {
 const teamMembers = [
   {
     id: 1,
-    name: 'Dhaarini K N Hathwar',
+    name: 'Srinidhi R Bharadwaj',
     title: 'Team Lead',
-    description: 'Some text that describes me lorem ipsum ipsum lorem.',
-    email: 'jane@example.com',
+    description: 'A 4th-year BTech Artificial Intelligence and Data Science student, combines leadership skills and technical expertise to drive innovation and deliver impactful results.',
+    email: 'srinnidhirbharadwaj@gmail.com',
    
   },
   {
     id: 2,
-    name: 'Srinidhi R Bharadwaj',
-    title: 'Developer and Design Lead',
-    description: 'Some text that describes me lorem ipsum ipsum lorem.',
-    email: 'mike@example.com',
+    name: 'Dhaarini K N Hathwar ',
+    title: 'Developer',
+    description: 'A skilled Developer with a passion for solutions that blends technical expertise with a problem-solving mindset to deliver high-quality software and applications.',
+    email: 'dhaarinihathwar@gmail.com',
    
   },
   {
     id: 3,
     name: 'Yashas Kishore',
     title: 'Developer ',
-    description: 'Some text that describes me lorem ipsum ipsum lorem.',
-    email: 'john@example.com',
+    description: 'A Developer with a strong foundation in software development, applies technical expertise skills to create innovative solutions, consistently delivering high-quality results.',
+    email: 'yashaskishore3@gmail.com',
   
   },
   {
     id: 4,
     name: 'Indu K',
     title: 'Developer',
-    description: 'Some text that describes me lorem ipsum ipsum lorem.',
-    email: 'john@example.com',
+    description: ' a Developer with a passion for coding and problem-solving, creates efficient, effective and innovative solutions with strong technical and critical thinking expertise.',
+    email: 'induk5107@gmail.com',
     
   },
 ];
@@ -86,19 +86,14 @@ const teamMembers = [
             Get to Know Us
           </h2>
           <h3 className="text-4xl font-bold text-gray-800 mb-6">
-            The Best Agriculture Market
+            Cultivating Innovation in Agriculture
           </h3>
           <p className="text-green-500 my-4 text-xl">
-            There are many variations of passa of lorem available, but <br />
-            the majority have suffered alteration.
+          At Agrisphere, we don’t just see agriculture as a tradition—we see it as a powerful force for global change.
           </p>
 
           <p className="text-lg text-gray-700 mb-6">
-            Agrios is the largest global organic farm. Welcome to Agri Sphere,
-            where innovation meets agriculture. Our platform empowers farmers
-            with modern tools and insights to maximize productivity, conserve
-            resources, and drive sustainable growth. Join us in transforming
-            agriculture for a better tomorrow.
+          Agriculture is the backbone of our communities, and we are here to strengthen it. Agrisphere is a hub where technology meets agriculture, providing farmers with resources to grow smarter, faster, and more sustainably. Whether you’re a small-scale farmer or part of a large cooperative, we’re here to make your work simpler and more effective.
           </p>
 
           {/* Icons with Text */}
@@ -107,19 +102,18 @@ const teamMembers = [
           <div className="flex items-center space-x-3 mb-2">
             <Tick />
             <p className="text-lg text-gray-700">
-              Lorem Ipsum is not simply random text.
-            </p>
+            Smart Decisions with Data: Empowering farmers through analytics and insights.</p>
           </div>
           <div className="flex items-center space-x-3 mb-2">
             <Tick />
             <p className="text-lg text-gray-700">
-              Lorem Ipsum is not simply random text.
+            Farming Sustainably: Promoting eco-friendly practices to preserve soil and water.
             </p>
           </div>
           <div className="flex items-center space-x-3 mb-8">
             <Tick />
             <p className="text-lg text-gray-700">
-              Making this the first true generator on the internet.
+            Connecting Farmers: Building resilient communities by linking farmers to markets.
             </p>
           </div>
 

@@ -58,8 +58,7 @@ function HomePage() {
           </h2>
 
           <p className="max-w-lg  mb-6 text-lg sm:text-xm">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-            tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+          Revolutionize your farming with cutting-edge solutions that streamline decision-making and maximize productivity. Access tailored insights for efficient crop management, optimal resource use, and market preparedness. Take a step toward a more sustainable, profitable, and future-ready agriculture.
           </p>
           <div className="flex gap-8">
             <button className="bg-green-500 text-white px-6 py-3 rounded-lg text-lg hover:bg-green-600 transition-all duration-300">
@@ -88,58 +87,29 @@ function HomePage() {
             Our Introductions
           </h2>
           <h3 className="text-4xl font-bold text-gray-800 mb-6">
-            Evolutionizing Agriculture for a Sustainable Future
-          </h3>
+          Redefining Agriculture for a Smarter, Sustainable Future.          </h3>
           <p className="text-lg text-gray-700 mb-6">
-            Agrios is the largest global organic farm. Welcome to Agri Sphere,
-            where innovation meets agriculture. Our platform empowers farmers
-            with modern tools and insights to maximize productivity, conserve
-            resources, and drive sustainable growth. Join us in transforming
-            agriculture for a better tomorrow.
+          Welcome to Agrisphere, where innovation drives sustainable agriculture. Our platform equips farmers with smart tools and insights to boost productivity, optimize resources, and embrace eco-friendly practices. Together, we’re shaping a future where farming thrives in harmony with the environment.
           </p>
 
           {/* Icons with Text */}
           <div className="flex space-x-12 mb-6">
             <div className="flex flex-col items-center">
-              <svg
-                className="w-8 h-8 text-green-500"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-              >
-                <path d="M12 2L2 12h3v7h5v-7h3l-8-7z" />
-              </svg>
+            <span className="mb-2">🌱</span> 
               <p className="text-center text-sm text-gray-600">
-                Lorem lorem lorem
+              Enhancing Productivity
               </p>
             </div>
             <div className="flex flex-col items-center">
-              <svg
-                className="w-8 h-8 text-yellow-500"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-              >
-                <path d="M12 2L2 12h3v7h5v-7h3l-8-7z" />
-              </svg>
+            <span className="mb-2">💡</span> 
               <p className="text-center text-sm text-gray-600">
-                Lorem lorem lorem
+              Data-Driven Solutions
               </p>
             </div>
             <div className="flex flex-col items-center">
-              <svg
-                className="w-8 h-8 text-red-500"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-              >
-                <path d="M12 2L2 12h3v7h5v-7h3l-8-7z" />
-              </svg>
+            <span className="mb-2">🌍</span> 
               <p className="text-center text-sm text-gray-600">
-                Lorem lorem lorem
+              Eco-Friendly Practices
               </p>
             </div>
           </div>
@@ -148,13 +118,13 @@ function HomePage() {
           <div className="flex items-center space-x-3 mb-8">
             <Tick />
             <p className="text-lg text-gray-700">
-              Lorem Ipsum is not simply random text.
+            Bridging the gap between tradition and technology.
             </p>
           </div>
           <div className="flex items-center space-x-3 mb-8">
             <Tick />
             <p className="text-lg text-gray-700">
-              Making this the first true generator on the internet.
+            Advanced tools for crop planning and market readiness.
             </p>
           </div>
 
