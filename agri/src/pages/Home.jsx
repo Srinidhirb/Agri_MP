@@ -2,6 +2,9 @@ import Navbar from "../components/NavBar";
 import BG from "../assets/images/BG.png";
 import IntroImg from "../assets/images/home2.png";
 import Home3 from "../assets/images/home3.png";
+import wheat from "../assets/images/wheat.png";
+import blog from "../assets/images/blog.png";
+import blog1 from "../assets/images/blog1.png";
 import Leaf from "../assets/images/leaf.png";
 import Tick from "../assets/icons/Tick";
 import SMS from "../assets/images/Smart.png";
@@ -269,9 +272,55 @@ function HomePage() {
         <h2 className="text-center text-4xl font-bold text-gray-800 mb-12">
         {t('blogPosts')}
         </h2>
-        <div className="flex flex-wrap justify-center gap-6 px-4">
-          
+        <section className=" ">
+    
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto px-4">
+        {/* First Blog Post */}
+        <div
+  className="relative flex flex-col items-center justify-end bg-cover bg-center text-white p-6"
+  style={{ backgroundImage: `url(${wheat})` }}
+>
+  {/* Overlay */}
+  <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+  
+  {/* Content */}
+  <h3 className="relative text-2xl font-semibold mb-2">Miscovery incommode earnestly commanded if.</h3>
+  <p className="relative mb-4">Seeing rather her you not esteem men settle genius excuse. Deal say over you age from. Comparison new ham melancholy son themselves.</p>
+  <a href="#" className="relative text-white  flex items-center">
+    CONTINUE READING <span className="ml-2">→</span>
+  </a>
+</div>
+        <div className="flex h-96 gap-5">
+        {/* Second Blog Post */}
+        <div className="bg-white  ">
+          <img src={blog} alt="" />
+          <div className="flex items-center space-x-2 mt-2 mb-4">
+            <div className="bg-green-200 text-green-800 px-3 py-1 rounded font-bold">26</div>
+            <span className="text-gray-600 text-sm">Aug, 2023</span>
+          </div>
+          <h3 className="text-lg font-semibold px-4 mb-2">Expression acceptance imprudence particular</h3>
+          <p className="text-gray-500 text-sm px-4 mb-4">Md Sohag • 25 April, 2023</p>
+          <a href="#" className="text-blue-600 px-4  flex items-center">
+            CONTINUE READING <span className="ml-2">→</span>
+          </a>
         </div>
+
+        {/* Third Blog Post */}
+        <div className="bg-white  ">
+        <img src={blog1} alt="" />
+          <div className="flex items-center space-x-2 mt-2 mb-4">
+            <div className="bg-orange-200 text-orange-800 px-3 py-1 rounded font-bold">08</div>
+            <span className="text-gray-600 text-sm">Dec, 2023</span>
+          </div>
+          <h3 className="text-lg font-semibold px-4 mb-2">Considered imprudence of technical friendship.</h3>
+          <p className="text-gray-500 text-sm px-4 mb-4">Md Sohag • 25 April, 2023</p>
+          <a href="#" className="text-blue-600 px-4  flex items-center">
+            CONTINUE READING <span className="ml-2">→</span>
+          </a>
+        </div>
+        </div>
+      </div>
+    </section>
       </div>
         <Footer/>
     </div>

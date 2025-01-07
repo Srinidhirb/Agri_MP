@@ -2,10 +2,16 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS  # Importing CORS
 import pandas as pd
 import pickle
+import fitz  # PyMuPDF for PDF text extraction
+import os
 
 # Enable CORS for cross-origin requests
 app = Flask(__name__)
 CORS(app)  # This will allow all origins by default
+
+UPLOAD_FOLDER = "./uploads"
+app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)  # Ensure upload folder exists
 
 # Load the Agricultural Predictor class and the trained model
 class AgriculturalPredictor:
@@ -57,8 +63,44 @@ class AgriculturalPredictor:
         return fertility_pred_str, recommendations
 
 
-# Flask app setup
+# Initialize the predictor
 predictor = AgriculturalPredictor.load_model("./agricultural_predictor_model.pkl")
+
+
+# Utility function to extract text from PDF using PyMuPDF
+def extract_text_from_pdf(file_path):
+    doc = fitz.open(file_path)
+    text = ""
+    for page in doc:
+        text += page.get_text()
+    return text
+
+
+@app.route("/upload", methods=["POST"])
+def upload_file():
+    try:
+        # Check if a file is present in the request
+        if "file" not in request.files:
+            return jsonify({"error": "No file uploaded"}), 400
+
+        file = request.files["file"]
+        if file.filename == "":
+            return jsonify({"error": "No file selected"}), 400
+
+        # Save the file to the upload folder
+        file_path = os.path.join(app.config["UPLOAD_FOLDER"], file.filename)
+        file.save(file_path)
+
+        # Extract text from the uploaded file
+        extracted_text = extract_text_from_pdf(file_path)
+
+        # Here, you can implement logic to parse `extracted_text` and map it to the form fields
+        # For simplicity, we'll return the extracted text
+        return jsonify({"extracted_text": extracted_text})
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
 
 @app.route("/predict", methods=["POST"])
 def predict():
@@ -81,6 +123,5 @@ def predict():
         return jsonify({"error": str(e)})
 
 
-
 if __name__ == "__main__":
-    app.run(debug=True,  port=5001)  # Running on port 5000
+    app.run(debug=True, port=5001)

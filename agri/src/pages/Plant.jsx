@@ -183,7 +183,8 @@ function Plant() {
                         <div
                           dangerouslySetInnerHTML={{
                             __html: remedies
-                              .replace(/\*\*/g, "") // Remove bold asterisks (**)
+                              .replace(/\*\*/g, "")
+                              .replace(/\*/g, "") // Remove bold asterisks (**)
                               .replace(/"/g, "") // Remove double quotes
                               .split("\n") // Split the remedies by newlines
                               .map((line) => {

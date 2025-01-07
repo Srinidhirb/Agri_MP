@@ -13,7 +13,7 @@ CORS(app)  # Enable CORS for all routes
 genai.configure(api_key='AIzaSyBAOad5g0ON0BsGo9Xh2K1mZIXT7z6YKZc')
 
 # Load the trained plant disease detection model
-detection_model = load_model('./my_model.keras')
+detection_model = load_model('./models/efficientnetb3_model.keras')
 
 # Disease types corresponding to the model's output classes
 disease_types = [

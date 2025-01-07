@@ -193,7 +193,7 @@ function SoilCrop() {
     <>
       <NavBar />
       <Banner items={["Home", "services", "Soil Health Analysis"]} />
-      <FileUpload />
+      <FileUpload setFormData={setFormData} />
       <div className="flex items-center my-8 w-11/12 mx-auto">
         <div className="flex-grow border-t-2 border-dashed border-gray-400"></div>
         <span className="px-4 text-gray-600 font-medium">OR</span>
@@ -245,7 +245,9 @@ function SoilCrop() {
                   humidity: "",
                   rainfall: "",
                 })
+                
               }
+
               className="px-6 py-2 bg-gray-300 text-gray-700 font-medium rounded-md shadow hover:bg-gray-400"
             >
               RESET
