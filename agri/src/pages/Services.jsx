@@ -93,6 +93,7 @@ function Services() {
         </Link>
       </div>
       <div className="flex justify-center  items-center gap-8">
+        <Link to='http://localhost:5173/' target='blank'>
         <div
           className="h-[26rem] bg-cover w-80 bg-center flex items-end relative "
           style={{ backgroundImage: `url(${Shareing})` }}
@@ -108,6 +109,7 @@ function Services() {
             Resource <br /> Sharing
           </span>
         </div>
+        </Link>
         <Link to="/education"><div
           className="h-[26rem] bg-cover w-80 bg-center flex items-end relative "
           style={{ backgroundImage: `url(${Education})` }}
@@ -124,6 +126,7 @@ function Services() {
           </span>
         </div>
         </Link>
+         <Link to="/price">
         <div
           className="h-[26rem] bg-cover w-80 bg-center flex items-end relative "
           style={{ backgroundImage: `url(${Market})` }}
@@ -139,6 +142,7 @@ function Services() {
             Market Price <br /> Prediction
           </span>
         </div>
+        </Link>
       </div>
       <Footer/>
     </>

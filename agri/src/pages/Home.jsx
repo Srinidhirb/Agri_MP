@@ -64,9 +64,11 @@ function HomePage() {
           <p className="max-w-2xl  mb-6 text-lg sm:text-xm">
           {t('revolutionize')}          </p>
           <div className="flex gap-8">
+            <Link to="/services">
             <button className="bg-green-500 text-white px-6 py-3 rounded-lg text-lg hover:bg-green-600 transition-all duration-300">
             {t('discoverMore')}
             </button>
+            </Link>
             <img src={Leaf} alt="" />
           </div>
         </div>

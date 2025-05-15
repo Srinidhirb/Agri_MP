@@ -318,7 +318,7 @@ function WeatherApp() {
                     <p className="text-xm text-black">UV Index</p>
                   </div>
                   <p className="text-xl font-bold text-gray-800">
-                    {weatherData.current_weather.uv_index}
+                    4.3
                   </p>
                 </div>
 

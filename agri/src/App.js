@@ -15,6 +15,8 @@ import Register from './pages/Register';
 import NavBar from './components/NavBar'; // Import your NavBar
 import ProfilePage from './pages/ProfilePage';
 import LanguageSelector from './components/LanguageSelector';
+import CommingSoon from './pages/CommingSoon';
+import Price from './pages/Price';
 // Create a QueryClient instance
 const queryClient = new QueryClient();
 
@@ -39,6 +41,11 @@ const App = () => {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/lang" element={<LanguageSelector />} />
+            <Route path="/projects" element={<CommingSoon />} />
+            <Route path="/news" element={<CommingSoon />} />
+            <Route path="/contact" element={<CommingSoon />} />
+            <Route path="/Price" element={<Price />} />
+
           </Routes>
         </Router>
       </UserProvider>

@@ -25,7 +25,7 @@ const Login = () => {
     e.preventDefault();
     setLoading(true);
     setError(''); // Clear any previous errors
-    
+
     try {
       const response = await fetch('http://127.0.0.1:5010/api/login', {
         method: 'POST',
@@ -49,62 +49,61 @@ const Login = () => {
       setLoading(false);
     }
   };
-  
+
   return (
     <>
       <NavBar />
       <Banner items={["Home", "Login"]} />
       <div className="h-[70vh] flex items-center justify-center">
-      <div className="h-[70vh] flex items-center justify-center ">
-     
-  <form
-    onSubmit={handleSubmit}
-    className="flex flex-col gap-6 w-96 p-8 shadow-xl border border-gray-300 rounded-xl bg-white"
-  >
-    <h2 className="text-3xl font-bold text-center text-gray-800">Welcome Back</h2>
-    {error && (
-      <p className="text-red-500 text-center text-sm font-semibold">
-        {error}
-      </p>
-    )}
-    <label className="font-medium text-gray-700">Username or Email:</label>
-    <input
-      type="text"
-      value={usernameOrEmail}
-      onChange={(e) => setUsernameOrEmail(e.target.value)}
-      required
-      className="p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-400 focus:outline-none"
-      placeholder="Enter your username or email"
-    />
-    <label className="font-medium text-gray-700">Password:</label>
-    <input
-      type="password"
-      value={password}
-      onChange={(e) => setPassword(e.target.value)}
-      required
-      className="p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-400 focus:outline-none"
-      placeholder="Enter your password"
-    />
-    <button
-      type="submit"
-      className={`bg-blue-600 text-white p-3 rounded-md hover:bg-blue-700 focus:ring-2 focus:ring-blue-400 focus:outline-none ${
-        loading ? 'opacity-75' : ''
-      }`}
-      disabled={loading}
-    >
-      {loading ? 'Logging in...' : 'Login'}
-    </button>
-    <p className="text-center text-sm text-gray-500 mt-4">
-      Don't have an account?{' '}
-      <a href="/register" className="text-blue-600 hover:underline">
-        Register here
-      </a>
-    </p>
-  </form>
-</div>
+        <div className="h-[70vh] flex items-center justify-center ">
+
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-col gap-6 w-96 p-8 shadow-xl border border-gray-300 rounded-xl bg-white"
+          >
+            <h2 className="text-3xl font-bold text-center text-gray-800">Welcome Back</h2>
+            {error && (
+              <p className="text-red-500 text-center text-sm font-semibold">
+                {error}
+              </p>
+            )}
+            <label className="font-medium text-gray-700">Username or Email:</label>
+            <input
+              type="text"
+              value={usernameOrEmail}
+              onChange={(e) => setUsernameOrEmail(e.target.value)}
+              required
+              className="p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-400 focus:outline-none"
+              placeholder="Enter your username or email"
+            />
+            <label className="font-medium text-gray-700">Password:</label>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              className="p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-400 focus:outline-none"
+              placeholder="Enter your password"
+            />
+            <button
+              type="submit"
+              className={`bg-blue-600 text-white p-3 rounded-md hover:bg-blue-700 focus:ring-2 focus:ring-blue-400 focus:outline-none ${loading ? 'opacity-75' : ''
+                }`}
+              disabled={loading}
+            >
+              {loading ? 'Logging in...' : 'Login'}
+            </button>
+            <p className="text-center text-sm text-gray-500 mt-4">
+              Don't have an account?{' '}
+              <a href="/register" className="text-blue-600 hover:underline">
+                Register here
+              </a>
+            </p>
+          </form>
+        </div>
 
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 };
